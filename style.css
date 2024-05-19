@@ -10,29 +10,33 @@ h1 {
 
 .content.container {
     display: flex;
+    flex-direction: column;
     gap: 2em;
 }
 
 .buttons {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     padding: 1em;
-    background-color: grey;
-    gap: 1em;
+    gap: 4em;
+}
+
+button {
+    scale: 1.4;
 }
 
 .grid.container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: grey;
-    padding: 1em;
+    padding: 0% 32%;
 }
 
 .box {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border: solid 1px black;
     background-color: blanchedalmond;
+    flex-shrink: 0;
 }
