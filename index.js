@@ -5,3 +5,20 @@
 // - Change grid size
 // - Reset the grid
 
+//Grab elements from HTML document
+const gridContainer = document.querySelector(".grid.container");
+
+//Setting up the grid
+let boxes = [];
+addGrid(16);
+
+function addGrid (size) {
+    for (let i = 0; i < (size * size); i++) {
+        const box = document.createElement("div");
+        box.className = "box";
+        gridContainer.appendChild(box);
+        boxes.push(box);
+    }
+}
+
+console.log(boxes.length)
