@@ -9,10 +9,11 @@
 const gridContainer = document.querySelector(".grid.container");
 const createButton = document.querySelector(".grid-button");
 const deleteGridButton = document.querySelector(".grid-clear");
+const gridSelecter = document.querySelector("select");
 
 
 //Setting up button functions
-createButton.addEventListener("click", () => addGrid(16));
+createButton.addEventListener("click", () => addGrid());
 deleteGridButton.addEventListener("click", () => {
     boxes.forEach((box) => {
         box.setAttribute("style", "background-color: blanchedalmond;");
@@ -30,14 +31,16 @@ function paintCell(e) {
 //Setting up the grid
 let boxes = [];
 
-function addGrid (size) {
+function addGrid () {
+    //Get grid size from select input
+    const size = gridSelecter.value;
     //Delete grid before creating a new one
     if (boxes) {
         boxes.forEach((box) => {
             box.remove();
         })
     }
-    //Create the grid with size of slider
+    //Create the grid with size of selecter
     for (let i = 0; i < (size * size); i++) {
         const box = document.createElement("div");
         box.className = "box";
